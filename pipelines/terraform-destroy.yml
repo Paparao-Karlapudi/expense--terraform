@@ -4,7 +4,7 @@ pipelines:
     group: Terraform
     materials:
       git-2058dd3:
-        git: https://github.com/Paparao-Karlapudi/expense--terraform.git
+        git: https://github.com/iteration-1/expense--terraform.git
 
         shallow_clone: false
         auto_update: true
@@ -20,4 +20,3 @@ pipelines:
                 - exec: {command: terraform,  arguments:["init", "-backend-config=env-dev/state.tfvars"], run_if: passed}
                 - exec: {command: terraform,  arguments: [ "destroy", "-var-file=env-dev/main.tfvars", "auto-approve" ], run_if: passed }
 
-#check clone
